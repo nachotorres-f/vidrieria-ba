@@ -5,8 +5,8 @@ La landing usa información ficticia y material visual ilustrativo para mostrar 
 ## Prioridad alta: identidad y contacto
 
 - [ ] Confirmar cómo debe escribirse la marca: **Vidriería Buenos Aires**, razón social y, si corresponde, nombre del dueño.
-- [ ] Reemplazar el WhatsApp ficticio `+54 9 11 5555-0182` y actualizar todos los enlaces `wa.me`.
-- [ ] Reemplazar el teléfono ficticio `11 5555-0182` y todos los enlaces `tel:`.
+- [ ] Confirmar que el WhatsApp de vista previa `+54 9 11 5693-9824` es el definitivo y está autorizado para publicarse.
+- [ ] Confirmar que el teléfono de llamadas `11 5693-9824` debe ser el mismo número y puede mostrarse públicamente.
 - [ ] Reemplazar el correo ficticio `hola@vidrieriabuenosaires.com.ar`.
 - [ ] Reemplazar la dirección ficticia `Av. San Juan 1840, CABA` o indicar que solo se trabaja a domicilio.
 - [ ] Confirmar los horarios reales de atención; actualmente figuran lunes a viernes de 8 a 18 h y sábados de 9 a 13 h.

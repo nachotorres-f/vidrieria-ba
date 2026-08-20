@@ -159,3 +159,12 @@ test('keeps the mobile menu icon legible over moving imagery', () => {
 
   assert.match(toggleLines, /height:\s*2px/);
 });
+
+test('uses the configured contact number consistently', () => {
+  assert.doesNotMatch(html, /5555-0182|5491155550182|541155550182/);
+  assert.match(html, /\+54 9 11 5693-9824/);
+  assert.match(html, /11 5693-9824/);
+  assert.match(html, /https:\/\/wa\.me\/5491156939824/);
+  assert.match(html, /tel:\+541156939824/);
+  assert.match(html, /"telephone"\s*:\s*"\+54 11 5693-9824"/);
+});
