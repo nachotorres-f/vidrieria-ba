@@ -110,7 +110,8 @@ test('optimizes below-the-fold media and identifies illustrative assets', () => 
   assert.equal(imageTags.length, 7);
   assert.ok(imageTags.every((tag) => /loading=["']lazy["']/.test(tag)), 'all content images should be lazy loaded');
   assert.ok(imageTags.every((tag) => /alt=["'][^"']+["']/.test(tag)), 'all images need useful alt text');
-  assert.match(html, /Video ilustrativo/);
+  assert.doesNotMatch(html, /class=["']media-credit["']/);
+  assert.match(pending, /Video ilustrativo:\s*\[Pexels/);
   assert.ok((html.match(/Imagen ilustrativa/g) || []).length >= 6);
 });
 
