@@ -1,6 +1,6 @@
 # Vidriería Buenos Aires Landing Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Construir una landing estática, moderna y orientada a consultas para Vidriería Buenos Aires, con hero de video, servicios, trabajos, reseñas, preguntas frecuentes y contacto por WhatsApp.
 
@@ -33,7 +33,7 @@
 - Consumes: requisitos de la especificación aprobada.
 - Produces: secciones con ids `inicio`, `servicios`, `proceso`, `trabajos`, `opiniones`, `preguntas` y `contacto`; documento de reemplazos reales.
 
-- [ ] **Step 1: Write the failing structural tests**
+- [x] **Step 1: Write the failing structural tests**
 
 Crear pruebas con `node:test` que lean `index.html` y fallen si no existen `main`, un único `h1`, las siete secciones, un enlace para saltar al contenido, el video con `autoplay muted loop playsinline`, seis servicios, tres opiniones, seis trabajos y datos estructurados `LocalBusiness`.
 
@@ -46,23 +46,23 @@ test('includes the complete conversion structure', () => {
 });
 ```
 
-- [ ] **Step 2: Run the tests and verify RED**
+- [x] **Step 2: Run the tests and verify RED**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: FAIL because `index.html` and `PENDIENTES.md` do not exist.
 
-- [ ] **Step 3: Add the semantic content and pending-data checklist**
+- [x] **Step 3: Add the semantic content and pending-data checklist**
 
 Crear el esqueleto completo en `index.html`, con navegación, textos finales de demostración, servicios, galería, reseñas, preguntas y contacto. Crear `PENDIENTES.md` con teléfono, WhatsApp, correo, dirección, horarios, zona, redes, reseñas, fotos, video, métricas, garantías, plazos, dominio, SEO, analítica y publicación.
 
-- [ ] **Step 4: Run the structural tests and verify GREEN**
+- [x] **Step 4: Run the structural tests and verify GREEN**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: PASS for the structural contract.
 
-- [ ] **Step 5: Commit the structural deliverable**
+- [x] **Step 5: Commit the structural deliverable**
 
 ```bash
 git add index.html PENDIENTES.md tests/landing.test.mjs
@@ -79,7 +79,7 @@ git commit -m "feat: add landing page content structure"
 - Consumes: ids y contenido de Task 1.
 - Produces: variables CSS `--ink`, `--paper`, `--amber`, layout responsive, estados de foco y fallback de movimiento.
 
-- [ ] **Step 1: Write the failing visual-contract tests**
+- [x] **Step 1: Write the failing visual-contract tests**
 
 Agregar aserciones para variables de color, `@media (prefers-reduced-motion: reduce)`, breakpoints móvil, `min-height: 44px`, `:focus-visible`, `object-fit: cover`, póster del video, estados de carga diferida y barra de contacto móvil.
 
@@ -92,23 +92,23 @@ test('contains accessibility and responsive visual safeguards', () => {
 });
 ```
 
-- [ ] **Step 2: Run the tests and verify RED**
+- [x] **Step 2: Run the tests and verify RED**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: FAIL because the visual system is not implemented.
 
-- [ ] **Step 3: Implement the embedded CSS**
+- [x] **Step 3: Implement the embedded CSS**
 
 Agregar normalización, tipografía, paleta, hero full bleed, header superpuesto, listas editoriales, proceso numerado, galería asimétrica, reseñas, acordeón, cierre, footer, barra móvil y breakpoints. Incluir transiciones con desactivación total bajo movimiento reducido.
 
-- [ ] **Step 4: Run the tests and verify GREEN**
+- [x] **Step 4: Run the tests and verify GREEN**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: PASS for structure and visual safeguards.
 
-- [ ] **Step 5: Commit the visual system**
+- [x] **Step 5: Commit the visual system**
 
 ```bash
 git add index.html tests/landing.test.mjs
@@ -125,7 +125,7 @@ git commit -m "feat: add responsive visual system and video hero"
 - Consumes: formulario `#quote-form`, menú `#nav-toggle`, preguntas `.faq-item`, enlaces `[data-whatsapp-message]`.
 - Produces: `buildWhatsAppUrl(message)`, `openWhatsApp(message)`, menú móvil, acordeones accesibles, observador de revelado y mensajes contextuales.
 
-- [ ] **Step 1: Write failing interaction-contract tests**
+- [x] **Step 1: Write failing interaction-contract tests**
 
 Agregar pruebas que exijan funciones nombradas, `encodeURIComponent`, validación de formulario, actualización de `aria-expanded`, cierre con Escape, `IntersectionObserver` y fallback cuando la API no existe.
 
@@ -138,23 +138,23 @@ test('defines the interaction contracts', () => {
 });
 ```
 
-- [ ] **Step 2: Run the tests and verify RED**
+- [x] **Step 2: Run the tests and verify RED**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: FAIL because JavaScript interactions are missing.
 
-- [ ] **Step 3: Implement minimal JavaScript interactions**
+- [x] **Step 3: Implement minimal JavaScript interactions**
 
 Implementar configuración centralizada del WhatsApp temporal, construcción segura de URLs, CTA por servicio, validación nativa del formulario, menú móvil, cierre con Escape y selección, acordeones con un panel abierto, revelado progresivo y año dinámico. No realizar solicitudes de red ni almacenar datos.
 
-- [ ] **Step 4: Run the tests and verify GREEN**
+- [x] **Step 4: Run the tests and verify GREEN**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: all interaction-contract tests PASS.
 
-- [ ] **Step 5: Commit the conversion behavior**
+- [x] **Step 5: Commit the conversion behavior**
 
 ```bash
 git add index.html tests/landing.test.mjs
@@ -172,41 +172,41 @@ git commit -m "feat: add accessible conversion interactions"
 - Consumes: landing completa de Tasks 1–3.
 - Produces: evidencia de pruebas, revisión de escritorio/móvil, consola limpia y checklist final cubierto.
 
-- [ ] **Step 1: Run automated verification**
+- [x] **Step 1: Run automated verification**
 
 Run: `node --test tests/landing.test.mjs`
 
 Expected: all tests PASS with zero failures.
 
-- [ ] **Step 2: Start a local static server**
+- [x] **Step 2: Start a local static server**
 
 Run: `python3 -m http.server 4173 --bind 127.0.0.1`
 
 Expected: `http://127.0.0.1:4173/` responds with HTTP 200.
 
-- [ ] **Step 3: Verify desktop behavior in a real browser**
+- [x] **Step 3: Verify desktop behavior in a real browser**
 
 Comprobar a 1440 × 900: hero, video o póster, navegación, CTA, enlaces internos, menú, acordeones, formulario y consola sin errores.
 
-- [ ] **Step 4: Verify mobile behavior in a real browser**
+- [x] **Step 4: Verify mobile behavior in a real browser**
 
 Comprobar a 390 × 844: primera pantalla, menú, lectura sin desborde horizontal, galería, acordeones y barra de contacto persistente.
 
-- [ ] **Step 5: Verify reduced motion and keyboard flow**
+- [x] **Step 5: Verify reduced motion and keyboard flow**
 
 Emular `prefers-reduced-motion: reduce`, recorrer controles con Tab y confirmar foco visible, orden lógico y ausencia de animación imprescindible.
 
-- [ ] **Step 6: Audit temporary data coverage**
+- [x] **Step 6: Audit temporary data coverage**
 
 Comparar cada teléfono, WhatsApp, correo, dirección, horario, zona, reseña, foto, video, cifra y promesa de `index.html` contra `PENDIENTES.md`; agregar cualquier omisión antes de finalizar.
 
-- [ ] **Step 7: Re-run verification after fixes**
+- [x] **Step 7: Re-run verification after fixes**
 
 Run: `node --test tests/landing.test.mjs && git diff --check`
 
 Expected: all tests PASS and no whitespace errors.
 
-- [ ] **Step 8: Commit verified corrections**
+- [x] **Step 8: Commit verified corrections**
 
 ```bash
 git add index.html PENDIENTES.md tests/landing.test.mjs
