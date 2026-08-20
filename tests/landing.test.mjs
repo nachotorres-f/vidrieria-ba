@@ -144,3 +144,17 @@ test('coordinates FAQ state and dynamic footer year', () => {
   assert.match(html, /item\.removeAttribute\s*\(['"]open['"]\)/);
   assert.match(html, /new Date\s*\(\)\.getFullYear\s*\(\)/);
 });
+
+test('keeps the primary gallery example aligned with its mampara caption', () => {
+  const firstWork = html.match(/<figure class=["']work-item[^>]*>[\s\S]*?<\/figure>/)?.[0] ?? '';
+
+  assert.match(firstWork, /photo-1723810388114-bb718470c016/);
+  assert.match(firstWork, /Mampara fija/);
+});
+
+test('keeps the mobile menu icon legible over moving imagery', () => {
+  const mobileRules = html.match(/@media \(max-width: 760px\)[\s\S]*?@media \(prefers-reduced-motion/)?.[0] ?? '';
+  const toggleLines = mobileRules.match(/\.nav-toggle > span\[aria-hidden="true"\]\s*\{[\s\S]*?\}/)?.[0] ?? '';
+
+  assert.match(toggleLines, /height:\s*2px/);
+});
