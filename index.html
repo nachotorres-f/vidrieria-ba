@@ -1736,5 +1736,108 @@
     <a href="tel:+541155550182">Llamar</a>
     <a href="https://wa.me/5491155550182" data-whatsapp-message="Hola, quisiera pedir un presupuesto.">WhatsApp</a>
   </div>
+
+  <script id="app-script">
+    document.documentElement.classList.add('js');
+
+    const WHATSAPP_NUMBER = '5491155550182';
+
+    function buildWhatsAppUrl(message) {
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message.trim())}`;
+    }
+
+    function openWhatsApp(message) {
+      const openedWindow = window.open(buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
+      if (openedWindow) openedWindow.opener = null;
+    }
+
+    document.querySelectorAll('[data-whatsapp-message]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        openWhatsApp(link.dataset.whatsappMessage);
+      });
+    });
+
+    const navToggle = document.querySelector('#nav-toggle');
+    const siteNav = document.querySelector('#site-nav');
+
+    function setNavigationOpen(isOpen) {
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.querySelector('.sr-only').textContent = isOpen ? 'Cerrar menú' : 'Abrir menú';
+      siteNav.classList.toggle('is-open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    }
+
+    navToggle.addEventListener('click', () => {
+      setNavigationOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setNavigationOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+        setNavigationOpen(false);
+        navToggle.focus();
+      }
+    });
+
+    const quoteForm = document.querySelector('#quote-form');
+
+    quoteForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!quoteForm.checkValidity()) {
+        quoteForm.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(quoteForm);
+      const name = String(formData.get('name')).trim();
+      const zone = String(formData.get('zone')).trim();
+      const service = String(formData.get('service')).trim();
+      const detail = String(formData.get('message') || '').trim();
+      const messageLines = [
+        `Hola, soy ${name}. Quisiera pedir un presupuesto.`,
+        `Zona: ${zone}.`,
+        `Trabajo: ${service}.`,
+      ];
+
+      if (detail) messageLines.push(`Detalle: ${detail}`);
+      openWhatsApp(messageLines.join('\n'));
+    });
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach((activeItem) => {
+      activeItem.addEventListener('toggle', () => {
+        if (!activeItem.open) return;
+
+        faqItems.forEach((item) => {
+          if (item !== activeItem) item.removeAttribute('open');
+        });
+      });
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((element) => element.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+    }
+
+    document.querySelector('#current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -113,3 +113,34 @@ test('optimizes below-the-fold media and identifies illustrative assets', () => 
   assert.match(html, /Video ilustrativo/);
   assert.ok((html.match(/Imagen ilustrativa/g) || []).length >= 6);
 });
+
+test('defines safe WhatsApp conversion behavior', () => {
+  assert.match(html, /function buildWhatsAppUrl\s*\(message\)/);
+  assert.match(html, /encodeURIComponent\s*\(message\.trim\(\)\)/);
+  assert.match(html, /function openWhatsApp\s*\(message\)/);
+  assert.match(html, /window\.open\s*\([^;]*['"]noopener,noreferrer['"]/);
+  assert.match(html, /\[data-whatsapp-message\]/);
+});
+
+test('validates the quote form before preparing its message', () => {
+  assert.match(html, /quoteForm\.addEventListener\s*\(['"]submit['"]/);
+  assert.match(html, /quoteForm\.checkValidity\s*\(\)/);
+  assert.match(html, /quoteForm\.reportValidity\s*\(\)/);
+  assert.match(html, /formData\.get\s*\(['"]name['"]\)/);
+  assert.match(html, /formData\.get\s*\(['"]zone['"]\)/);
+  assert.match(html, /formData\.get\s*\(['"]service['"]\)/);
+});
+
+test('implements accessible navigation and progressive reveals', () => {
+  assert.match(html, /navToggle\.setAttribute\s*\(['"]aria-expanded['"]/);
+  assert.match(html, /event\.key\s*===\s*['"]Escape['"]/);
+  assert.match(html, /IntersectionObserver/);
+  assert.match(html, /revealElements\.forEach/);
+  assert.match(html, /document\.documentElement\.classList\.add\s*\(['"]js['"]\)/);
+});
+
+test('coordinates FAQ state and dynamic footer year', () => {
+  assert.match(html, /querySelectorAll\s*\(['"]\.faq-item['"]\)/);
+  assert.match(html, /item\.removeAttribute\s*\(['"]open['"]\)/);
+  assert.match(html, /new Date\s*\(\)\.getFullYear\s*\(\)/);
+});
