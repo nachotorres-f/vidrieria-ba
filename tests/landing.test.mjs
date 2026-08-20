@@ -89,3 +89,27 @@ test('all internal navigation targets exist', () => {
     assert.match(html, new RegExp(`id=["']${target}["']`), `broken internal target: #${target}`);
   }
 });
+
+test('contains the responsive visual system and accessibility safeguards', () => {
+  for (const token of ['--ink', '--deep', '--paper', '--amber', '--mist']) {
+    assert.match(html, new RegExp(`${token}\\s*:`), `missing design token ${token}`);
+  }
+
+  assert.match(html, /@media\s*\([^)]*max-width:\s*760px/);
+  assert.match(html, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+  assert.match(html, /:focus-visible/);
+  assert.match(html, /min-height:\s*44px/);
+  assert.match(html, /object-fit:\s*cover/);
+  assert.match(html, /\.mobile-contact-bar\s*\{/);
+  assert.match(html, /\.work-grid\s*\{/);
+});
+
+test('optimizes below-the-fold media and identifies illustrative assets', () => {
+  const imageTags = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
+
+  assert.equal(imageTags.length, 7);
+  assert.ok(imageTags.every((tag) => /loading=["']lazy["']/.test(tag)), 'all content images should be lazy loaded');
+  assert.ok(imageTags.every((tag) => /alt=["'][^"']+["']/.test(tag)), 'all images need useful alt text');
+  assert.match(html, /Video ilustrativo/);
+  assert.ok((html.match(/Imagen ilustrativa/g) || []).length >= 6);
+});
