@@ -5,10 +5,10 @@ La landing usa información ficticia y material visual ilustrativo para mostrar 
 ## Prioridad alta: identidad y contacto
 
 - [ ] Confirmar cómo debe escribirse la marca: **Vidriería Buenos Aires**, razón social y, si corresponde, nombre del dueño.
-- [ ] Confirmar que el WhatsApp de vista previa `+54 9 11 5693-9824` es el definitivo y está autorizado para publicarse.
-- [ ] Confirmar que el teléfono de llamadas `11 5693-9824` debe ser el mismo número y puede mostrarse públicamente.
+- [x] Confirmar y publicar el WhatsApp `+54 9 11 3863-3574`.
+- [x] Confirmar y publicar el teléfono de llamadas `+54 9 11 3863-3574`.
 - [ ] Reemplazar el correo ficticio `hola@vidrieriabuenosaires.com.ar`.
-- [ ] Reemplazar la dirección ficticia `Av. San Juan 1840, CABA` o indicar que solo se trabaja a domicilio.
+- [x] Reemplazar la dirección ficticia por `José Luis De La Peña 840, Monte Chingolo, Buenos Aires`.
 - [ ] Confirmar los horarios reales de atención; actualmente figuran lunes a viernes de 8 a 18 h y sábados de 9 a 13 h.
 - [ ] Definir la zona real de cobertura: barrios de CABA y localidades de GBA atendidas, costos de visita y excepciones.
 - [ ] Incorporar logo real si existe. En esta versión se usa una marca tipográfica con la letra “V”.
@@ -47,7 +47,7 @@ La landing usa información ficticia y material visual ilustrativo para mostrar 
 
 - [ ] Elegir y registrar el dominio definitivo.
 - [ ] Reemplazar título, descripción SEO, URL canónica e imagen de Open Graph con datos definitivos.
-- [ ] Actualizar los datos estructurados `LocalBusiness` del `<head>` con contacto, dirección, horarios y zona reales.
+- [ ] Completar y revisar los datos estructurados `LocalBusiness` del `<head>` con horarios y zona reales; contacto y dirección ya fueron actualizados.
 - [ ] Crear favicon e íconos para dispositivos.
 - [ ] Configurar una herramienta de analítica solo si se decide medir visitas; documentar privacidad y consentimiento cuando corresponda.
 - [ ] Configurar Google Business Profile y vincular la dirección o zona de servicio real.

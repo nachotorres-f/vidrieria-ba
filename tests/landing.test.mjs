@@ -161,10 +161,15 @@ test('keeps the mobile menu icon legible over moving imagery', () => {
 });
 
 test('uses the configured contact number consistently', () => {
-  assert.doesNotMatch(html, /5555-0182|5491155550182|541155550182/);
-  assert.match(html, /\+54 9 11 5693-9824/);
-  assert.match(html, /11 5693-9824/);
-  assert.match(html, /https:\/\/wa\.me\/5491156939824/);
-  assert.match(html, /tel:\+541156939824/);
-  assert.match(html, /"telephone"\s*:\s*"\+54 11 5693-9824"/);
+  assert.match(html, /\+54 9 11 3863-3574/);
+  assert.match(html, /https:\/\/wa\.me\/5491138633574/);
+  assert.match(html, /tel:\+5491138633574/);
+  assert.match(html, /"telephone"\s*:\s*"\+54 9 11 3863-3574"/);
+});
+
+test('uses the configured address consistently', () => {
+  assert.match(html, /José Luis De La Peña 840/);
+  assert.match(html, /Monte Chingolo/);
+  assert.match(html, /"addressLocality"\s*:\s*"Monte Chingolo"/);
+  assert.match(html, /"addressRegion"\s*:\s*"Buenos Aires"/);
 });
