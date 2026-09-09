@@ -7,7 +7,7 @@ La landing usa información ficticia y material visual ilustrativo para mostrar 
 - [ ] Confirmar cómo debe escribirse la marca: **Vidriería Buenos Aires**, razón social y, si corresponde, nombre del dueño.
 - [x] Confirmar y publicar el WhatsApp `+54 9 11 3863-3574`.
 - [x] Confirmar y publicar el teléfono de llamadas `+54 9 11 3863-3574`.
-- [ ] Reemplazar el correo ficticio `hola@vidrieriabuenosaires.com.ar`.
+- [x] Confirmar y publicar el correo `vidrieriabaires@gmail.com`.
 - [x] Reemplazar la dirección ficticia por `José Luis De La Peña 840, Monte Chingolo, Buenos Aires`.
 - [ ] Confirmar los horarios reales de atención; actualmente figuran lunes a viernes de 8 a 18 h y sábados de 9 a 13 h.
 - [ ] Definir la zona real de cobertura: barrios de CABA y localidades de GBA atendidas, costos de visita y excepciones.
@@ -59,4 +59,4 @@ La landing usa información ficticia y material visual ilustrativo para mostrar 
 
 - Video ilustrativo: [Pexels — Aerial View of Modern Glass Architecture](https://www.pexels.com/video/aerial-view-of-modern-glass-architecture-31208218/).
 - Fotografías ilustrativas: URLs de [Unsplash](https://unsplash.com/) incluidas directamente en `index.html`.
-- Todos los nombres de clientes, barrios asociados a trabajos, textos de reseñas y datos de contacto son ficticios.
+- Todos los nombres de clientes, barrios asociados a trabajos y textos de reseñas son ficticios.

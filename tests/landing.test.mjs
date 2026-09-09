@@ -54,7 +54,9 @@ test('presents the requested service and trust content', () => {
 test('exposes direct contact paths and local business metadata', () => {
   assert.match(html, /href=["']https:\/\/wa\.me\/[^"']+["']/);
   assert.match(html, /href=["']tel:[^"']+["']/);
-  assert.match(html, /href=["']mailto:[^"']+["']/);
+  assert.match(html, /href=["']mailto:vidrieriabaires@gmail\.com["']/);
+  assert.match(html, /"email"\s*:\s*"vidrieriabaires@gmail\.com"/);
+  assert.match(pending, /correo[^\n]*vidrieriabaires@gmail\.com/i);
   assert.match(html, /<form\b[^>]*id=["']quote-form["']/);
   assert.match(html, /"@type"\s*:\s*"LocalBusiness"/);
 });
